@@ -6,34 +6,36 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	web "github.com/davidiamyou/go-scim/handlers"
-	"github.com/davidiamyou/go-scim/mongo"
-	scim "github.com/davidiamyou/go-scim/shared"
 	"github.com/go-zoo/bone"
+	web "github.com/leodido/go-scim/handlers"
+	"github.com/leodido/go-scim/mongo"
+	scim "github.com/leodido/go-scim/shared"
 )
 
 // setup everything
 func initConfiguration() {
 	propertySource := &mapPropertySource{
 		data: map[string]interface{}{
-			"scim.resources.user.locationBase":           "http://localhost:8080/v2/Users",
-			"scim.resources.group.locationBase":          "http://localhost:8080/v2/Groups",
-			"scim.resources.schema.internalRoot.path":    "../resources/schemas/root_internal.json",
-			"scim.resources.schema.internalUser.path":    "../resources/schemas/user_internal.json",
-			"scim.resources.schema.internalGroup.path":   "../resources/schemas/group_internal.json",
-			"scim.resources.schema.user.path":            "../resources/schemas/user.json",
-			"scim.resources.schema.enterprise.user.path": "../resources/schemas/enterprise_user.json",
-			"scim.resources.schema.group.path":           "../resources/schemas/group.json",
-			"scim.resources.resourceType.user":           "../resources/resource_types/user.json",
-			"scim.resources.resourceType.group":          "../resources/resource_types/group.json",
-			"scim.resources.spConfig":                    "../resources/sp_config/sp_config.json",
-			"scim.protocol.itemsPerPage":                 10,
-			"scim.protocol.uri.user":                     "/Users",
-			"scim.protocol.uri.group":                    "/Groups",
-			"mongo.url":                                  "mongodb://localhost:32768/scim_example?maxPoolSize=100",
-			"mongo.db":                                   "scim_example",
-			"mongo.collection.user":                      "users",
-			"mongo.collection.group":                     "groups",
+			"scim.resources.user.locationBase":            "http://localhost:8080/v2/Users",
+			"scim.resources.group.locationBase":           "http://localhost:8080/v2/Groups",
+			"scim.resources.schema.internalRoot.path":     "../resources/schemas/root_internal.json",
+			"scim.resources.schema.internalUser.path":     "../resources/schemas/user_internal.json",
+			"scim.resources.schema.internalGroup.path":    "../resources/schemas/group_internal.json",
+			"scim.resources.schema.user.path":             "../resources/schemas/user.json",
+			"scim.resources.schema.enterprise.user.path":  "../resources/schemas/enterprise_user.json",
+			"scim.resources.schema.account.password.path": "../resources/schemas/account_password.json",
+			"scim.resources.schema.password.policy.path":  "../resources/schemas/password_policy.json",
+			"scim.resources.schema.group.path":            "../resources/schemas/group.json",
+			"scim.resources.resourceType.user":            "../resources/resource_types/user.json",
+			"scim.resources.resourceType.group":           "../resources/resource_types/group.json",
+			"scim.resources.spConfig":                     "../resources/sp_config/sp_config.json",
+			"scim.protocol.itemsPerPage":                  10,
+			"scim.protocol.uri.user":                      "/Users",
+			"scim.protocol.uri.group":                     "/Groups",
+			"mongo.url":                                   "mongodb://localhost:32768/scim_example?maxPoolSize=100",
+			"mongo.db":                                    "scim_example",
+			"mongo.collection.user":                       "users",
+			"mongo.collection.group":                      "groups",
 		},
 	}
 
@@ -49,6 +51,14 @@ func initConfiguration() {
 	s, _, err = scim.ParseSchema(propertySource.GetString("scim.resources.schema.user.path"))
 	web.ErrorCheck(err)
 	userSchema = s
+
+	s, _, err = scim.ParseSchema(propertySource.GetString("scim.resources.schema.account.password.path"))
+	web.ErrorCheck(err)
+	accountPasswordSchema = s
+
+	s, _, err = scim.ParseSchema(propertySource.GetString("scim.resources.schema.password.policy.path"))
+	web.ErrorCheck(err)
+	passwordPolicySchema = s
 
 	s, _, err = scim.ParseSchema(propertySource.GetString("scim.resources.schema.enterprise.user.path"))
 	web.ErrorCheck(err)
@@ -152,6 +162,8 @@ var (
 	groupSchemaInternal,
 	userSchema,
 	enterpriseUserSchema,
+	accountPasswordSchema,
+	passwordPolicySchema,
 	groupSchema *scim.Schema
 )
 

@@ -3,7 +3,7 @@ package handlers
 import (
 	"context"
 	"fmt"
-	"github.com/davidiamyou/go-scim/shared"
+	"github.com/leodido/go-scim/shared"
 	"net/http"
 )
 

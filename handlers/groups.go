@@ -3,8 +3,9 @@ package handlers
 import (
 	"context"
 	"fmt"
-	"github.com/davidiamyou/go-scim/shared"
 	"net/http"
+
+	"github.com/leodido/go-scim/shared"
 )
 
 func CreateGroupHandler(r shared.WebRequest, server ScimServer, ctx context.Context) (ri *ResponseInfo) {

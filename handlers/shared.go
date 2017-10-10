@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	. "github.com/davidiamyou/go-scim/shared"
+	. "github.com/leodido/go-scim/shared"
 	"github.com/satori/go.uuid"
 	"net/http"
 	"strconv"
