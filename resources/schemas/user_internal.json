@@ -1421,6 +1421,145 @@
             "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber",
             "_arrayIndexKey": []
           }
+        },
+        {
+          "name": "costCenter",
+          "type": "string",
+          "multiValued": false,
+          "description": "Identifies the name of a cost center.",
+          "required": false,
+          "caseExact": false,
+          "mutability": "readWrite",
+          "returned": "default",
+          "uniqueness": "none",
+          "_assist": {
+            "_jsonName": "costCenter",
+            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:costCenter",
+            "_arrayIndexKey": []
+          }
+        },
+        {
+          "name": "organization",
+          "type": "string",
+          "multiValued": false,
+          "description": "Identifies the name of an organization.",
+          "required": false,
+          "caseExact": false,
+          "mutability": "readWrite",
+          "returned": "default",
+          "uniqueness": "none",
+          "_assist": {
+            "_jsonName": "organization",
+            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization",
+            "_arrayIndexKey": []
+          }
+        },
+        {
+          "name": "division",
+          "type": "string",
+          "multiValued": false,
+          "description": "Identifies the name of a division.",
+          "required": false,
+          "caseExact": false,
+          "mutability": "readWrite",
+          "returned": "default",
+          "uniqueness": "none",
+          "_assist": {
+            "_jsonName": "division",
+            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division",
+            "_arrayIndexKey": []
+          }
+        },
+        {
+          "name": "department",
+          "type": "string",
+          "multiValued": false,
+          "description": "Identifies the name of a department.",
+          "required": false,
+          "caseExact": false,
+          "mutability": "readWrite",
+          "returned": "default",
+          "uniqueness": "none",
+          "_assist": {
+            "_jsonName": "department",
+            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department",
+            "_arrayIndexKey": []
+          }
+        },
+        {
+          "name": "manager",
+          "type": "complex",
+          "multiValued": false,
+          "description": "The User's manager.  A complex type that optionally allows service providers to represent organizational hierarchy by referencing the 'id' attribute of another User.",
+          "required": false,
+          "subAttributes": [
+            {
+              "name": "value",
+              "type": "string",
+              "multiValued": false,
+              "description": "The id of the SCIM resource representing the User's manager.  REQUIRED.",
+              "required": false,
+              "caseExact": false,
+              "mutability": "readWrite",
+              "returned": "default",
+              "uniqueness": "none",
+              "_assist": {
+                "_jsonName": "value",
+                "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.value",
+                "_arrayIndexKey": []
+              }
+            },
+            {
+              "name": "$ref",
+              "type": "reference",
+              "referenceTypes": [
+                "User"
+              ],
+              "multiValued": false,
+              "description": "The URI of the SCIM resource representing the User's manager.  REQUIRED.",
+              "required": false,
+              "caseExact": false,
+              "mutability": "readWrite",
+              "returned": "default",
+              "uniqueness": "none",
+              "_assist": {
+                "_jsonName": "$ref",
+                "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.$ref",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.$ref",
+                "_arrayIndexKey": []
+              }
+            },
+            {
+              "name": "displayName",
+              "type": "string",
+              "multiValued": false,
+              "description": "The displayName of the User's manager. OPTIONAL and READ-ONLY.",
+              "required": false,
+              "caseExact": false,
+              "mutability": "readOnly",
+              "returned": "default",
+              "uniqueness": "none",
+              "_assist": {
+                "_jsonName": "displayName",
+                "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.displayName",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager.displayName",
+                "_arrayIndexKey": []
+              }
+            }
+          ],
+          "mutability": "readWrite",
+          "returned": "default",
+          "_assist": {
+            "_jsonName": "manager",
+            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager",
+            "_arrayIndexKey": []
+          }
         }
       ],
       "_assist": {
