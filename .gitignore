@@ -18,4 +18,10 @@ glide.lock
 /vendor
 
 .idea/
+.vscode/
 
+example/debug
+example/example
+
+*.log
+*.nvimlog
