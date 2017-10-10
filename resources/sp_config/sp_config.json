@@ -1,33 +1,33 @@
 {
-  "schemas":
-  ["urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig"],
+  "schemas": [
+    "urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig"
+  ],
   "documentationUri": "http://example.com/help/scim.html",
   "patch": {
-    "supported":true
+    "supported": true
   },
   "bulk": {
-    "supported":true,
-    "maxOperations":1000,
-    "maxPayloadSize":1048576
+    "supported": true,
+    "maxOperations": 1000,
+    "maxPayloadSize": 1048576
   },
   "filter": {
-    "supported":true,
+    "supported": true,
     "maxResults": 200
   },
   "changePassword": {
-    "supported":false
+    "supported": false
   },
   "sort": {
-    "supported":true
+    "supported": true
   },
   "etag": {
-    "supported":true
+    "supported": true
   },
   "authenticationSchemes": [
     {
       "name": "OAuth Bearer Token",
-      "description":
-      "Authentication scheme using the OAuth Bearer Token Standard",
+      "description": "Authentication scheme using the OAuth Bearer Token Standard",
       "specUri": "http://www.rfc-editor.org/info/rfc6750",
       "documentationUri": "http://example.com/help/oauth.html",
       "type": "oauthbearertoken",
@@ -35,8 +35,7 @@
     },
     {
       "name": "HTTP Basic",
-      "description":
-      "Authentication scheme using the HTTP Basic Standard",
+      "description": "Authentication scheme using the HTTP Basic Standard",
       "specUri": "http://www.rfc-editor.org/info/rfc2617",
       "documentationUri": "http://example.com/help/httpBasic.html",
       "type": "httpbasic"

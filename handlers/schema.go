@@ -2,14 +2,16 @@ package handlers
 
 import (
 	"context"
-	"github.com/davidiamyou/go-scim/shared"
 	"net/http"
+
+	"github.com/davidiamyou/go-scim/shared"
 )
 
 func GetAllSchemaHandler(r shared.WebRequest, server ScimServer, ctx context.Context) (ri *ResponseInfo) {
 	ri = newResponse()
 	jsonBytes, err := server.MarshalJSON([]interface{}{
 		server.Schema(shared.UserUrn),
+		server.Schema(shared.EnterpriseUserUrn),
 		server.Schema(shared.GroupUrn),
 	}, nil, nil, nil)
 	ErrorCheck(err)
