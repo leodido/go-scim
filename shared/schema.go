@@ -308,7 +308,7 @@ const (
 
 	UserResourceType                  = "User"
 	GroupResourceType                 = "Group"
-	PasswordPolicyType                = "PasswordPolicy"
+	PasswordPolicyResourceType        = "PasswordPolicy"
 	SchemaResourceType                = "Schema"
 	ResourceTypeResourceType          = "ResourceType"
 	ServiceProviderConfigResourceType = "ServiceProviderConfig"
