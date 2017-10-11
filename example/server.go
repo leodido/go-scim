@@ -197,6 +197,10 @@ func (ss *simpleServer) Schema(id string) *scim.Schema {
 		return userSchema
 	case scim.EnterpriseUserUrn:
 		return enterpriseUserSchema
+	case scim.AccountPasswordUrn:
+		return accountPasswordSchema
+	case scim.PasswordPolicyUrn:
+		return passwordPolicySchema
 	case scim.GroupUrn:
 		return groupSchema
 	default:
