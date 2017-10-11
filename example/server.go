@@ -38,6 +38,7 @@ func initConfiguration() {
 			"mongo.db":                                          "scim_example",
 			"mongo.collection.user":                             "users",
 			"mongo.collection.group":                            "groups",
+			"mongo.collection.password_policy":                  "password_policy",
 		},
 	}
 
@@ -156,6 +157,9 @@ func main() {
 	mux.PutFunc("/Groups/:resourceId", wrap(web.ReplaceGroupHandler, scim.ReplaceGroup))
 	mux.PatchFunc("/Groups/:resourceId", wrap(web.PatchGroupHandler, scim.PatchGroup))
 
+	mux.GetFunc("/PasswordPolicies/:resourceId", wrap(web.GetPasswordPolicyByIdHandler, scim.GetPasswordPolicyById))
+	mux.PostFunc("/PasswordPolicies", wrap(web.CreatePasswordPolicyHandler, scim.CreatePasswordPolicy))
+
 	mux.PostFunc("/Bulk", wrap(web.BulkHandler, scim.BulkOp))
 
 	mux.GetFunc("/", wrap(web.RootQueryHandler, scim.RootQuery))
@@ -165,7 +169,6 @@ func main() {
 	mux.GetFunc("/Schemas", wrap(web.GetAllSchemaHandler, scim.GetAllSchema))
 
 	mux.GetFunc("/ResourceTypes", wrap(web.GetAllResourceTypeHandler, scim.GetAllResourceType))
-
 	mux.GetFunc("/ServiceProviderConfig", wrap(web.GetServiceProviderConfigHandler, scim.GetSPConfig))
 
 	http.ListenAndServe(":8080", mux)
