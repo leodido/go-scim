@@ -29,6 +29,7 @@ func initConfiguration() {
 			"scim.resources.schema.group.path":                  "../resources/schemas/group.json",
 			"scim.resources.resourceType.user":                  "../resources/resource_types/user.json",
 			"scim.resources.resourceType.group":                 "../resources/resource_types/group.json",
+			"scim.resources.resourceType.passwordPolicy":        "../resources/resource_types/password_policy.json",
 			"scim.resources.spConfig":                           "../resources/sp_config/sp_config.json",
 			"scim.protocol.itemsPerPage":                        10,
 			"scim.protocol.uri.user":                            "/Users",
@@ -76,6 +77,8 @@ func initConfiguration() {
 	web.ErrorCheck(err)
 	groupResourceType, _, err := scim.ParseResource(propertySource.GetString("scim.resources.resourceType.group"))
 	web.ErrorCheck(err)
+	passwordPolicyResourceType, _, err := scim.ParseResource(propertySource.GetString("scim.resources.resourceType.passwordPolicy"))
+	web.ErrorCheck(err)
 
 	spConfig, _, err := scim.ParseResource(propertySource.GetString("scim.resources.spConfig"))
 	web.ErrorCheck(err)
@@ -98,7 +101,7 @@ func initConfiguration() {
 	passwordPolicyRepo, err = mongo.NewMongoRepositoryWithUrl(
 		propertySource.GetString("mongo.url"),
 		propertySource.GetString("mongo.db"),
-		propertySource.GetString("mongo.collection.passwordPolicy"),
+		propertySource.GetString("mongo.collection.password_policy"),
 		passwordPolicySchemaInternal,
 		resourceConstructor)
 	web.ErrorCheck(err)
@@ -106,11 +109,13 @@ func initConfiguration() {
 		repos: []scim.Repository{
 			userRepo,
 			groupRepo,
+			passwordPolicyRepo,
 		},
 	}
 	resourceTypeRepo = scim.NewMapRepository(map[string]scim.DataProvider{
-		userResourceType.GetId():  userResourceType,
-		groupResourceType.GetId(): groupResourceType,
+		userResourceType.GetId():           userResourceType,
+		groupResourceType.GetId():          groupResourceType,
+		passwordPolicyResourceType.GetId(): passwordPolicyResourceType,
 	})
 	spConfigRepo = scim.NewMapRepository(map[string]scim.DataProvider{
 		"": spConfig,
@@ -287,10 +292,10 @@ func (ss *simpleServer) Repository(identifier string) scim.Repository {
 		return rootQueryRepo
 	case scim.UserResourceType:
 		return userRepo
-	case scim.PasswordPolicyType:
-		return passwordPolicyRepo
 	case scim.GroupResourceType:
 		return groupRepo
+	case scim.PasswordPolicyResourceType:
+		return passwordPolicyRepo
 	case scim.ResourceTypeResourceType:
 		return resourceTypeRepo
 	case scim.ServiceProviderConfigResourceType:
