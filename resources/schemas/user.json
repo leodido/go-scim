@@ -774,6 +774,6 @@
   ],
   "meta" : {
     "resourceType" : "Schema",
-    "location" : "/Schemas/urn:ietf:params:scim:schemas:core:2.0:User"
+    "location" : "/v2/Schemas/urn:ietf:params:scim:schemas:core:2.0:User"
   }
 }
