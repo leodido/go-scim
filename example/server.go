@@ -18,6 +18,7 @@ func initConfiguration() {
 		data: map[string]interface{}{
 			"scim.resources.user.locationBase":                  "http://localhost:8080/v2/Users",
 			"scim.resources.group.locationBase":                 "http://localhost:8080/v2/Groups",
+			"scim.resources.passwordpolicy.locationBase":        "http://localhost:8080/v2/PasswordPolicies",
 			"scim.resources.schema.internalRoot.path":           "../resources/schemas/root_internal.json",
 			"scim.resources.schema.internalUser.path":           "../resources/schemas/user_internal.json",
 			"scim.resources.schema.internalGroup.path":          "../resources/schemas/group_internal.json",
@@ -34,6 +35,7 @@ func initConfiguration() {
 			"scim.protocol.itemsPerPage":                        10,
 			"scim.protocol.uri.user":                            "/Users",
 			"scim.protocol.uri.group":                           "/Groups",
+			"scim.protocol.uri.password_policy":                 "/PasswordPolicies",
 			"mongo.url":                                         "mongodb://localhost:32768/scim_example?maxPoolSize=100",
 			"mongo.db":                                          "scim_example",
 			"mongo.collection.user":                             "users",
@@ -123,12 +125,13 @@ func initConfiguration() {
 	})
 
 	exampleServer = &simpleServer{
-		logger:              &printLogger{},
-		propertySource:      propertySource,
-		idAssignment:        scim.NewIdAssignment(),
-		userMetaAssignment:  scim.NewMetaAssignment(propertySource, scim.UserResourceType),
-		groupMetaAssignment: scim.NewMetaAssignment(propertySource, scim.GroupResourceType),
-		groupAssignment:     scim.NewGroupAssignment(groupRepo),
+		logger:                       &printLogger{},
+		propertySource:               propertySource,
+		idAssignment:                 scim.NewIdAssignment(),
+		userMetaAssignment:           scim.NewMetaAssignment(propertySource, scim.UserResourceType),
+		passwordPolicyMetaAssignment: scim.NewMetaAssignment(propertySource, scim.PasswordPolicyResourceType),
+		groupMetaAssignment:          scim.NewMetaAssignment(propertySource, scim.GroupResourceType),
+		groupAssignment:              scim.NewGroupAssignment(groupRepo),
 	}
 }
 
@@ -201,12 +204,13 @@ var exampleServer web.ScimServer
 
 // Example server implementation
 type simpleServer struct {
-	propertySource      *mapPropertySource
-	logger              *printLogger
-	idAssignment        scim.ReadOnlyAssignment
-	userMetaAssignment  scim.ReadOnlyAssignment
-	groupMetaAssignment scim.ReadOnlyAssignment
-	groupAssignment     scim.ReadOnlyAssignment
+	propertySource               *mapPropertySource
+	logger                       *printLogger
+	idAssignment                 scim.ReadOnlyAssignment
+	userMetaAssignment           scim.ReadOnlyAssignment
+	passwordPolicyMetaAssignment scim.ReadOnlyAssignment
+	groupMetaAssignment          scim.ReadOnlyAssignment
+	groupAssignment              scim.ReadOnlyAssignment
 }
 
 func (ss *simpleServer) Property() scim.PropertySource              { return ss.propertySource }
@@ -282,6 +286,11 @@ func (ss *simpleServer) AssignReadOnlyValue(r *scim.Resource, ctx context.Contex
 		web.ErrorCheck(err)
 	case scim.ReplaceGroup, scim.PatchGroup:
 		err = ss.groupMetaAssignment.AssignValue(r, ctx)
+		web.ErrorCheck(err)
+	case scim.CreatePasswordPolicy:
+		err = ss.idAssignment.AssignValue(r, ctx)
+		web.ErrorCheck(err)
+		err = ss.passwordPolicyMetaAssignment.AssignValue(r, ctx)
 		web.ErrorCheck(err)
 	}
 	return
