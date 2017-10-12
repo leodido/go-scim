@@ -19,6 +19,8 @@ const (
 	PatchGroup
 	QueryGroup
 	DeleteGroup
+	GetPasswordPolicyById
+	CreatePasswordPolicy
 	RootQuery
 	BulkOp
 	GetSchemaById
