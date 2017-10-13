@@ -19,6 +19,7 @@
       "canonicalValues": [
         "urn:ietf:params:scim:schemas:core:2.0:User",
         "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+        "urn:ietf:params:scim:schemas:extension:account:2.0:Password",
         "urn:ietf:params:scim:schemas:core:2.0:Group",
         "urn:ietf:params:scim:schemas:core:2.0:ResourceType",
         "urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig",
@@ -1566,6 +1567,308 @@
         "_jsonName": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
         "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
         "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+        "_arrayIndexKey": []
+      }
+    },
+    {
+      "name": "urn:ietf:params:scim:schemas:extension:account:2.0:Password",
+      "description": "Account password extension",
+      "type": "complex",
+      "multiValued": false,
+      "required": false,
+      "caseExact": false,
+      "mutability": "readWrite",
+      "returned": "default",
+      "uniqueness": "none",
+      "referenceTypes": [],
+      "canonicalValues": [],
+      "subAttributes": [
+        {
+          "name": "passwordState",
+          "type": "complex",
+          "multiValued": false,
+          "description": "A Complex attribute that describes server provided attributes regarding the state of the resource's password.",
+          "required": true,
+          "returned": "default",
+          "mutability": "readWrite",
+          "subAttributes": [
+            {
+              "name": "createDate",
+              "type": "dateTime",
+              "multiValued": false,
+              "description": "A DateTime which specifies the date and time the current password was set.",
+              "required": false,
+              "mutability": "readWrite",
+              "returned": "default",
+              "_assist": {
+                "_jsonName": "createDate",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.createDate",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.createDate",
+                "_arrayIndexKey": []
+              }
+            },
+            {
+              "name": "cantChange",
+              "type": "boolean",
+              "multiValued": false,
+              "description": "A Boolean indicating that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored",
+              "required": false,
+              "mutability": "readWrite",
+              "returned": "default",
+              "_assist": {
+                "_jsonName": "cantChange",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.cantChange",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.cantChange",
+                "_arrayIndexKey": []
+              }
+            },
+            {
+              "name": "noExpiry",
+              "type": "boolean",
+              "multiValued": false,
+              "description": "A Boolean indicating that password expiry policy will not be applied for the current resource.",
+              "required": false,
+              "mutability": "readWrite",
+              "returned": "default",
+              "_assist": {
+                "_jsonName": "noExpiry",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.noExpiry",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.noExpiry",
+                "_arrayIndexKey": []
+              }
+            },
+            {
+              "name": "lastSuccessfulLoginDate",
+              "type": "dateTime",
+              "multiValued": false,
+              "description": "A DateTime value indicating the lastsuccessful login date.",
+              "required": false,
+              "mutability": "readWrite",
+              "returned": "default",
+              "_assist": {
+                "_jsonName": "lastSuccessfulLoginDate",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.lastSuccessfulLoginDate",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.lastSuccessfulLoginDate",
+                "_arrayIndexKey": []
+              }
+            },
+            {
+              "name": "lastFailedLoginDate",
+              "type": "dateTime",
+              "multiValued": false,
+              "description": "A DateTime value indicating the last failed login date.",
+              "required": false,
+              "mutability": "readWrite",
+              "returned": "default",
+              "_assist": {
+                "_jsonName": "lastFailedLoginDate",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.lastFailedLoginDate",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.lastFailedLoginDate",
+                "_arrayIndexKey": []
+              }
+            },
+            {
+              "name": "loginAttempts",
+              "type": "integer",
+              "multiValued": false,
+              "description": "An Integer value indicating the number of failed login attempts. The value is reset to 0 after a successfull login.",
+              "required": false,
+              "mutability": "readOnly",
+              "returned": "default",
+              "_assist": {
+                "_jsonName": "loginAttempts",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.loginAttempts",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.loginAttempts",
+                "_arrayIndexKey": []
+              }
+            },
+            {
+              "name": "resetAttempts",
+              "type": "integer",
+              "multiValued": false,
+              "description": "An Integer value indicating the number of password reset attempts. The value is reset to 0 after successful reset.",
+              "required": false,
+              "mutability": "readOnly",
+              "returned": "default",
+              "_assist": {
+                "_jsonName": "resetAttempts",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.resetAttempts",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.resetAttempts",
+                "_arrayIndexKey": []
+              }
+            },
+            {
+              "name": "passwordMustChange",
+              "type": "boolean",
+              "multiValued": false,
+              "description": "A Boolean value that indicates that the subject password value MUST change at the next login. If not changed, typically the account is locked The value may be set indirectly when the subject's current password expires, or directly set by an administrator.",
+              "required": false,
+              "mutability": "readWrite",
+              "returned": "default",
+              "_assist": {
+                "_jsonName": "passwordMustChange",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.passwordMustChange",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.passwordMustChange",
+                "_arrayIndexKey": []
+              }
+            }
+          ],
+          "_assist": {
+            "_jsonName": "passwordState",
+            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:passwordState",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:passwordState",
+            "_arrayIndexKey": []
+          }
+        },
+        {
+          "name": "passwordPolicyUrl",
+          "type": "reference",
+          "referenceTypes": [
+            "PasswordPolicy"
+          ],
+          "multiValued": false,
+          "description": "A URI reference value that indicates the address of a password policy that is used in relation to the current resource.",
+          "required": false,
+          "caseExact": false,
+          "mutability": "readWrite",
+          "returned": "default",
+          "uniqueness": "none",
+          "_assist": {
+            "_jsonName": "passwordPolicyUrl",
+            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:passwordPolicyUrl",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:passwordPolicyUrl",
+            "_arrayIndexKey": []
+          }
+        },
+        {
+          "name": "locked",
+          "type": "complex",
+          "multiValued": false,
+          "description": "A Complex attribute that indicates an account is locked (blocking new sessions).",
+          "required": false,
+          "returned": "default",
+          "mutability": "readWrite",
+          "subAttributes": [
+            {
+              "name": "reason",
+              "type": "integer",
+              "multiValued": false,
+              "description": "A number value indicating the reason for locking. Valid values are: 0 - failed attempts. 1 - admin lock. 2 - reset attempts",
+              "required": true,
+              "mutability": "readWrite",
+              "returned": "default",
+              "_assist": {
+                "_jsonName": "locked",
+                "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:locked.reason",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:locked.reason",
+                "_arrayIndexKey": []
+              }
+            },
+            {
+              "name": "on",
+              "type": "boolean",
+              "multiValued": false,
+              "description": "A Boolean value indicating the account is locked.",
+              "required": true,
+              "mutability": "readWrite",
+              "returned": "default",
+              "_assist": {
+                "_jsonName": "locked",
+                "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:locked.on",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:locked.on",
+                "_arrayIndexKey": []
+              }
+            },
+            {
+              "name": "lockDate",
+              "type": "dateTime",
+              "multiValued": false,
+              "description": "A DateTime which specifies the date and time the current resource was locked.",
+              "required": false,
+              "mutability": "readWrite",
+              "returned": "default",
+              "_assist": {
+                "_jsonName": "locked",
+                "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:locked.lockDate",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:locked.lockDate",
+                "_arrayIndexKey": []
+              }
+            }
+          ],
+          "_assist": {
+            "_jsonName": "locked",
+            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:locked",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:locked",
+            "_arrayIndexKey": []
+          }
+        },
+        {
+          "name": "challenges",
+          "type": "complex",
+          "multiValued": true,
+          "description": "A Complex attribute describing challenge questions that may be used as a supplementary factor during login or during password management requests.",
+          "required": false,
+          "returned": "default",
+          "mutability": "readWrite",
+          "subAttributes": [
+            {
+              "name": "question",
+              "type": "string",
+              "multiValued": false,
+              "description": "A String that represents a challenge question for which the corresponding response is defined.",
+              "required": true,
+              "caseExact": true,
+              "mutability": "readWrite",
+              "returned": "default",
+              "uniqueness": "none",
+              "_assist": {
+                "_jsonName": "challenges",
+                "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:challenges.question",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:challenges.question",
+                "_arrayIndexKey": []
+              }
+            },
+            {
+              "name": "response",
+              "type": "string",
+              "multiValued": false,
+              "description": "A String that represents the subjects specified correct response to the corresponding challenge.",
+              "required": true,
+              "caseExact": false,
+              "mutability": "readWrite",
+              "returned": "default",
+              "uniqueness": "none",
+              "_assist": {
+                "_jsonName": "challenges",
+                "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:challenges.response",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:challenges.response",
+                "_arrayIndexKey": []
+              }
+            }
+          ],
+          "_assist": {
+            "_jsonName": "challenges",
+            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:challenges",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:challenges",
+            "_arrayIndexKey": []
+          }
+        },
+        {
+          "name": "passwordHistory",
+          "type": "string",
+          "multiValued": true,
+          "description": "A writeOnly attribute that contains hashes of previous passwords associated with the SCIM resource.",
+          "required": false,
+          "caseExact": true,
+          "mutability": "writeOnly",
+          "returned": "never",
+          "uniqueness": "none"
+        }
+      ],
+      "_assist": {
+        "_jsonName": "urn:ietf:params:scim:schemas:extension:account:2.0:Password",
+        "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password",
         "_arrayIndexKey": []
       }
     }

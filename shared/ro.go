@@ -5,10 +5,11 @@ import (
 	"crypto/sha1"
 	"encoding/base64"
 	"fmt"
-	"github.com/satori/go.uuid"
 	"math"
 	"strings"
 	"time"
+
+	"github.com/satori/go.uuid"
 )
 
 func NewIdAssignment() ReadOnlyAssignment {
@@ -82,6 +83,18 @@ func (ro *metaAssignment) generateVersion(args ...string) string {
 		hash.Write([]byte(arg))
 	}
 	return fmt.Sprintf("W/\"%s\"", base64.StdEncoding.EncodeToString(hash.Sum(nil)))
+}
+
+type accountPasswordAssignment struct{}
+
+func (ro *accountPasswordAssignment) AssignValue(r *Resource, ctx context.Context) error {
+
+	accountPassword := map[string]interface{}{
+		"passwordMustChange": true,
+	}
+	r.Complex["urn:ietf:params:scim:schemas:extension:account:2.0:Password"] = accountPassword
+
+	return nil
 }
 
 type groupAssignment struct {

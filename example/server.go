@@ -208,6 +208,7 @@ type simpleServer struct {
 	logger                       *printLogger
 	idAssignment                 scim.ReadOnlyAssignment
 	userMetaAssignment           scim.ReadOnlyAssignment
+	accountPasswordAssignment    scim.ReadOnlyAssignment
 	passwordPolicyMetaAssignment scim.ReadOnlyAssignment
 	groupMetaAssignment          scim.ReadOnlyAssignment
 	groupAssignment              scim.ReadOnlyAssignment
@@ -273,6 +274,8 @@ func (ss *simpleServer) AssignReadOnlyValue(r *scim.Resource, ctx context.Contex
 		err = ss.userMetaAssignment.AssignValue(r, ctx)
 		web.ErrorCheck(err)
 		err = ss.groupAssignment.AssignValue(r, ctx)
+		web.ErrorCheck(err)
+		err = ss.accountPasswordAssignment.AssignValue(r, ctx)
 		web.ErrorCheck(err)
 	case scim.ReplaceUser, scim.PatchUser:
 		err = ss.userMetaAssignment.AssignValue(r, ctx)

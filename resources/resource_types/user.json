@@ -9,6 +9,10 @@
     {
       "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
       "required": true
+    },
+    {
+      "schema": "urn:ietf:params:scim:schemas:extension:account:2.0:Password",
+      "required": false
     }
   ],
   "meta": {
