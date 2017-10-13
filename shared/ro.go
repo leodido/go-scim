@@ -24,6 +24,10 @@ func NewGroupAssignment(groupRepository Repository) ReadOnlyAssignment {
 	return &groupAssignment{groupRepo: groupRepository}
 }
 
+func NewAccountPasswordAssignment() ReadOnlyAssignment {
+	return &accountPasswordAssignment{}
+}
+
 type ReadOnlyAssignment interface {
 	AssignValue(r *Resource, ctx context.Context) error
 }

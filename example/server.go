@@ -129,6 +129,7 @@ func initConfiguration() {
 		propertySource:               propertySource,
 		idAssignment:                 scim.NewIdAssignment(),
 		userMetaAssignment:           scim.NewMetaAssignment(propertySource, scim.UserResourceType),
+		accountPasswordAssignment	  scim.NewAccountPasswordAssignment(),
 		passwordPolicyMetaAssignment: scim.NewMetaAssignment(propertySource, scim.PasswordPolicyResourceType),
 		groupMetaAssignment:          scim.NewMetaAssignment(propertySource, scim.GroupResourceType),
 		groupAssignment:              scim.NewGroupAssignment(groupRepo),
