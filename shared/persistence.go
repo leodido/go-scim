@@ -10,6 +10,8 @@ type Repository interface {
 
 	Get(id, version string) (DataProvider, error)
 
+	GetByUserName(username string) (DataProvider, error)
+
 	GetAll() ([]Complex, error)
 
 	Count(query string) (int, error)
