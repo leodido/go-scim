@@ -19,7 +19,7 @@ func CreatePasswordResetRequestHandler(r shared.WebRequest, server ScimServer, c
 
 	username := resource.GetData()["username"].(map[string]interface{})["username"].(string)
 
-	user, err := repo.GetByUsername(username)
+	user, err := repo.GetByUserName(username)
 	ErrorCheck(err)
 
 	id := user.GetData()["id"].(map[string]interface{})["id"].(string)
