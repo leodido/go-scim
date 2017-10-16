@@ -45,7 +45,7 @@ func (r *mapRepository) Get(id, version string) (DataProvider, error) {
 	}
 }
 
-func (r *mapRepository) GetByUsername(username string) (DataProvider, error) {
+func (r *mapRepository) GetByUserName(username string) (DataProvider, error) {
 	if dp, ok := r.data[username]; !ok {
 		return nil, Error.Text("Resource not found searching by username")
 		//TODO: Error.ResourceNotFound related to username, and not only id and version
