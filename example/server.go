@@ -16,31 +16,35 @@ import (
 func initConfiguration() {
 	propertySource := &mapPropertySource{
 		data: map[string]interface{}{
-			"scim.resources.user.locationBase":                  "http://localhost:8080/v2/Users",
-			"scim.resources.group.locationBase":                 "http://localhost:8080/v2/Groups",
-			"scim.resources.passwordpolicy.locationBase":        "http://localhost:8080/v2/PasswordPolicies",
-			"scim.resources.schema.internalRoot.path":           "../resources/schemas/root_internal.json",
-			"scim.resources.schema.internalUser.path":           "../resources/schemas/user_internal.json",
-			"scim.resources.schema.internalGroup.path":          "../resources/schemas/group_internal.json",
-			"scim.resources.schema.internalPasswordPolicy.path": "../resources/schemas/password_policy_internal.json",
-			"scim.resources.schema.user.path":                   "../resources/schemas/user.json",
-			"scim.resources.schema.enterprise.user.path":        "../resources/schemas/enterprise_user.json",
-			"scim.resources.schema.account.password.path":       "../resources/schemas/account_password.json",
-			"scim.resources.schema.password.policy.path":        "../resources/schemas/password_policy.json",
-			"scim.resources.schema.group.path":                  "../resources/schemas/group.json",
-			"scim.resources.resourceType.user":                  "../resources/resource_types/user.json",
-			"scim.resources.resourceType.group":                 "../resources/resource_types/group.json",
-			"scim.resources.resourceType.passwordPolicy":        "../resources/resource_types/password_policy.json",
-			"scim.resources.spConfig":                           "../resources/sp_config/sp_config.json",
-			"scim.protocol.itemsPerPage":                        10,
-			"scim.protocol.uri.user":                            "/Users",
-			"scim.protocol.uri.group":                           "/Groups",
-			"scim.protocol.uri.password_policy":                 "/PasswordPolicies",
-			"mongo.url":                                         "mongodb://localhost:32768/scim_example?maxPoolSize=100",
-			"mongo.db":                                          "scim_example",
-			"mongo.collection.user":                             "users",
-			"mongo.collection.group":                            "groups",
-			"mongo.collection.password_policy":                  "password_policy",
+			"scim.resources.user.locationBase":                        "http://localhost:8080/v2/Users",
+			"scim.resources.group.locationBase":                       "http://localhost:8080/v2/Groups",
+			"scim.resources.passwordpolicy.locationBase":              "http://localhost:8080/v2/PasswordPolicies",
+			"scim.resources.passwordresetrequest.locationBase":        "http://localhost:8080/v2/PasswordResetRequests",
+			"scim.resources.schema.internalRoot.path":                 "../resources/schemas/root_internal.json",
+			"scim.resources.schema.internalUser.path":                 "../resources/schemas/user_internal.json",
+			"scim.resources.schema.internalGroup.path":                "../resources/schemas/group_internal.json",
+			"scim.resources.schema.internalPasswordPolicy.path":       "../resources/schemas/password_policy_internal.json",
+			"scim.resources.schema.internalPasswordResetRequest.path": "../resources/schemas/password_reset_request_internal.json",
+			"scim.resources.schema.user.path":                         "../resources/schemas/user.json",
+			"scim.resources.schema.enterprise.user.path":              "../resources/schemas/enterprise_user.json",
+			"scim.resources.schema.account.password.path":             "../resources/schemas/account_password.json",
+			"scim.resources.schema.password.policy.path":              "../resources/schemas/password_policy.json",
+			"scim.resources.schema.password.reset.request.path":       "../resources/schemas/password_reset_request.json",
+			"scim.resources.schema.group.path":                        "../resources/schemas/group.json",
+			"scim.resources.resourceType.user":                        "../resources/resource_types/user.json",
+			"scim.resources.resourceType.group":                       "../resources/resource_types/group.json",
+			"scim.resources.resourceType.passwordPolicy":              "../resources/resource_types/password_policy.json",
+			"scim.resources.spConfig":                                 "../resources/sp_config/sp_config.json",
+			"scim.protocol.itemsPerPage":                              10,
+			"scim.protocol.uri.user":                                  "/Users",
+			"scim.protocol.uri.group":                                 "/Groups",
+			"scim.protocol.uri.password_policy":                       "/PasswordPolicies",
+			"scim.protocol.uri.password_reset_request":                "/PasswordResetRequests",
+			"mongo.url":                                               "mongodb://localhost:32768/scim_example?maxPoolSize=100",
+			"mongo.db":                                                "scim_example",
+			"mongo.collection.user":                                   "users",
+			"mongo.collection.group":                                  "groups",
+			"mongo.collection.password_policy":                        "password_policy",
 		},
 	}
 
@@ -56,6 +60,9 @@ func initConfiguration() {
 	s, _, err = scim.ParseSchema(propertySource.GetString("scim.resources.schema.internalPasswordPolicy.path"))
 	web.ErrorCheck(err)
 	passwordPolicySchemaInternal = s
+	s, _, err = scim.ParseSchema(propertySource.GetString("scim.resources.schema.internalPasswordResetRequest.path"))
+	web.ErrorCheck(err)
+	passwordResetRequestSchemaInternal = s
 	s, _, err = scim.ParseSchema(propertySource.GetString("scim.resources.schema.user.path"))
 	web.ErrorCheck(err)
 	userSchema = s
@@ -67,6 +74,10 @@ func initConfiguration() {
 	s, _, err = scim.ParseSchema(propertySource.GetString("scim.resources.schema.password.policy.path"))
 	web.ErrorCheck(err)
 	passwordPolicySchema = s
+
+	s, _, err = scim.ParseSchema(propertySource.GetString("scim.resources.schema.password.reset.request.path"))
+	web.ErrorCheck(err)
+	passwordResetRequestSchema = s
 
 	s, _, err = scim.ParseSchema(propertySource.GetString("scim.resources.schema.enterprise.user.path"))
 	web.ErrorCheck(err)
@@ -129,7 +140,7 @@ func initConfiguration() {
 		propertySource:               propertySource,
 		idAssignment:                 scim.NewIdAssignment(),
 		userMetaAssignment:           scim.NewMetaAssignment(propertySource, scim.UserResourceType),
-		accountPasswordAssignment	  scim.NewAccountPasswordAssignment(),
+		accountPasswordAssignment:    scim.NewAccountPasswordAssignment(),
 		passwordPolicyMetaAssignment: scim.NewMetaAssignment(propertySource, scim.PasswordPolicyResourceType),
 		groupMetaAssignment:          scim.NewMetaAssignment(propertySource, scim.GroupResourceType),
 		groupAssignment:              scim.NewGroupAssignment(groupRepo),
@@ -164,6 +175,8 @@ func main() {
 	mux.GetFunc("/PasswordPolicies/:resourceId", wrap(web.GetPasswordPolicyByIdHandler, scim.GetPasswordPolicyById))
 	mux.PostFunc("/PasswordPolicies", wrap(web.CreatePasswordPolicyHandler, scim.CreatePasswordPolicy))
 
+	mux.PostFunc("/PasswordResetRequests", wrap(web.CreatePasswordResetRequestHandler, scim.CreatePasswordResetRequest))
+
 	mux.PostFunc("/Bulk", wrap(web.BulkHandler, scim.BulkOp))
 
 	mux.GetFunc("/", wrap(web.RootQueryHandler, scim.RootQuery))
@@ -184,10 +197,12 @@ var (
 	userSchemaInternal,
 	groupSchemaInternal,
 	passwordPolicySchemaInternal,
+	passwordResetRequestSchemaInternal,
 	userSchema,
 	enterpriseUserSchema,
 	accountPasswordSchema,
 	passwordPolicySchema,
+	passwordResetRequestSchema,
 	groupSchema *scim.Schema
 )
 
@@ -228,6 +243,8 @@ func (ss *simpleServer) Schema(id string) *scim.Schema {
 		return accountPasswordSchema
 	case scim.PasswordPolicyUrn:
 		return passwordPolicySchema
+	case scim.PasswordResetRequestUrn:
+		return passwordResetRequestSchema
 	case scim.GroupUrn:
 		return groupSchema
 	default:
@@ -244,6 +261,8 @@ func (ss *simpleServer) InternalSchema(id string) *scim.Schema {
 		return groupSchemaInternal
 	case scim.PasswordPolicyUrn:
 		return passwordPolicySchemaInternal
+	case scim.PasswordResetRequestUrn:
+		return passwordResetRequestSchemaInternal
 	default:
 		panic(scim.Error.Text("unknown schema id %s", id))
 	}

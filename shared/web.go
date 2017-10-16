@@ -21,6 +21,7 @@ const (
 	DeleteGroup
 	GetPasswordPolicyById
 	CreatePasswordPolicy
+	CreatePasswordResetRequest
 	RootQuery
 	BulkOp
 	GetSchemaById
