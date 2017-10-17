@@ -32,8 +32,11 @@ func CreatePasswordResetRequestHandler(r shared.WebRequest, server ScimServer, c
 
 	id := user["id"].(string)
 	version := user["version"].(string)
+	newPassword := resource.GetData()["password"].(string)
 
-	user["password"] = resource.GetData()["password"].(string)
+	user["password"] = newPassword
+
+	fmt.Println("New password ", newPassword)
 
 	err = repo.Update(id, version, ref)
 	ErrorCheck(err)
