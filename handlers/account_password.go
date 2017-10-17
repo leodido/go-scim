@@ -23,7 +23,8 @@ func CreatePasswordResetRequestHandler(r shared.WebRequest, server ScimServer, c
 	fmt.Println("username ", username)
 
 	list, err := repo.Search(shared.SearchRequest{
-		Filter: fmt.Sprintf("userName eq \"%s\"", username),
+		Filter:     fmt.Sprintf("userName eq \"%s\"", username),
+		StartIndex: 1,
 	})
 
 	// TODO: Check returned list
