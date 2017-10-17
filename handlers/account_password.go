@@ -32,7 +32,7 @@ func CreatePasswordResetRequestHandler(r shared.WebRequest, server ScimServer, c
 	user := list.Resources[0].GetData()
 
 	id := user["id"].(string)
-	version := user["version"].(string)
+	version := user["meta"].(map[string]interface{})["version"].(string)
 	newPassword := resource.GetData()["password"].(string)
 
 	user["password"] = newPassword
