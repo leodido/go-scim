@@ -18,9 +18,13 @@ func CreatePasswordResetRequestHandler(r shared.WebRequest, server ScimServer, c
 	err = server.ValidateType(resource, sch, ctx)
 	ErrorCheck(err)
 
-	username := resource.GetData()["username"].(string)
+	err = server.CorrectCase(resource, sch, ctx)
+	ErrorCheck(err)
 
-	fmt.Println("username ", username)
+	err = server.ValidateRequired(resource, sch, ctx)
+	ErrorCheck(err)
+
+	username := resource.GetData()["username"].(string)
 
 	list, err := repo.Search(shared.SearchRequest{
 		Filter:     fmt.Sprintf("userName eq \"%s\"", username),
@@ -36,9 +40,6 @@ func CreatePasswordResetRequestHandler(r shared.WebRequest, server ScimServer, c
 	newPassword := resource.GetData()["password"].(string)
 
 	user["password"] = newPassword
-
-	fmt.Println("New password ", newPassword)
-
 	err = repo.Update(id, version, ref)
 	ErrorCheck(err)
 
