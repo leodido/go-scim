@@ -10,8 +10,6 @@ type Repository interface {
 
 	Get(id, version string) (DataProvider, error)
 
-	GetByUserName(username string) (DataProvider, error)
-
 	GetAll() ([]Complex, error)
 
 	Count(query string) (int, error)
@@ -40,15 +38,6 @@ func (r *mapRepository) Create(provider DataProvider) error {
 func (r *mapRepository) Get(id, version string) (DataProvider, error) {
 	if dp, ok := r.data[id]; !ok {
 		return nil, Error.ResourceNotFound(id, version)
-	} else {
-		return dp, nil
-	}
-}
-
-func (r *mapRepository) GetByUserName(username string) (DataProvider, error) {
-	if dp, ok := r.data[username]; !ok {
-		return nil, Error.Text("Resource not found searching by username")
-		//TODO: Error.ResourceNotFound related to username, and not only id and version
 	} else {
 		return dp, nil
 	}
