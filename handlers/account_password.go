@@ -18,7 +18,7 @@ func CreatePasswordResetRequestHandler(r shared.WebRequest, server ScimServer, c
 	err = server.ValidateType(resource, sch, ctx)
 	ErrorCheck(err)
 
-	username := resource.GetData()["username"].(map[string]interface{})["username"].(string)
+	username := resource.GetData()["username"].(string)
 
 	fmt.Println("username ", username)
 
@@ -33,7 +33,7 @@ func CreatePasswordResetRequestHandler(r shared.WebRequest, server ScimServer, c
 	id := user["id"].(string)
 	version := user["version"].(string)
 
-	user["password"] = resource.GetData()["password"].(map[string]interface{})["password"].(string)
+	user["password"] = resource.GetData()["password"].(string)
 
 	err = repo.Update(id, version, ref)
 	ErrorCheck(err)
