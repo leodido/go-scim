@@ -1,17 +1,17 @@
 {
-  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
+  "schemas": ["urn:ietf:params:scim:schemas:core:2_0:ResourceType"],
   "id": "User",
   "name": "User",
   "endpoint": "/Users",
   "description": "User Account",
-  "schema": "urn:ietf:params:scim:schemas:core:2.0:User",
+  "schema": "urn:ietf:params:scim:schemas:core:2_0:User",
   "schemaExtensions": [
     {
-      "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+      "schema": "urn:ietf:params:scim:schemas:extension:enterprise:2_0:User",
       "required": true
     },
     {
-      "schema": "urn:ietf:params:scim:schemas:extension:account:2.0:Password",
+      "schema": "urn:ietf:params:scim:schemas:extension:account:2_0:Password",
       "required": false
     }
   ],

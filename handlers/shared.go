@@ -57,8 +57,8 @@ func ErrorCheck(err error) {
 }
 
 var (
-	errorTemplate    = `{"schemas": ["urn:ietf:params:scim:api:messages:2.0:Error"], "Status": "%d", "scimType":"%s", "detail":"%s"}`
-	errorTemplateAlt = `{"schemas": ["urn:ietf:params:scim:api:messages:2.0:Error"], "Status": "%d", "detail":"%s"}`
+	errorTemplate    = `{"schemas": ["urn:ietf:params:scim:api:messages:2_0:Error"], "Status": "%d", "scimType":"%s", "detail":"%s"}`
+	errorTemplateAlt = `{"schemas": ["urn:ietf:params:scim:api:messages:2_0:Error"], "Status": "%d", "detail":"%s"}`
 )
 
 func ErrorRecovery(next EndpointHandler) EndpointHandler {

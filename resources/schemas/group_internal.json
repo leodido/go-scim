@@ -1,5 +1,5 @@
 {
-  "id" : "urn:ietf:params:scim:schemas:core:2.0:Group",
+  "id" : "urn:ietf:params:scim:schemas:core:2_0:Group",
   "name" : "Group",
   "description" : "Group",
   "attributes" : [
@@ -15,11 +15,11 @@
       "uniqueness": "none",
       "referenceTypes": [ "uri" ],
       "canonicalValues": [
-        "urn:ietf:params:scim:schemas:core:2.0:User",
-        "urn:ietf:params:scim:schemas:core:2.0:Group",
-        "urn:ietf:params:scim:schemas:core:2.0:ResourceType",
-        "urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig",
-        "urn:ietf:params:scim:schemas:core:2.0:Schema"
+        "urn:ietf:params:scim:schemas:core:2_0:User",
+        "urn:ietf:params:scim:schemas:core:2_0:Group",
+        "urn:ietf:params:scim:schemas:core:2_0:ResourceType",
+        "urn:ietf:params:scim:schemas:core:2_0:ServiceProviderConfig",
+        "urn:ietf:params:scim:schemas:core:2_0:Schema"
       ],
       "subAttributes": [],
       "_assist": {
@@ -203,7 +203,7 @@
       "_assist": {
         "_jsonName": "displayName",
         "_path": "displayName",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:Group:displayName",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:Group:displayName",
         "_arrayIndexKey": []
       }
     },
@@ -227,7 +227,7 @@
           "_assist": {
             "_jsonName": "value",
             "_path": "members.value",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:Group:members.value",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:Group:members.value",
             "_arrayIndexKey": []
           }
         },
@@ -248,7 +248,7 @@
           "_assist": {
             "_jsonName": "$ref",
             "_path": "members.$ref",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:Group:members.$ref",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:Group:members.$ref",
             "_arrayIndexKey": []
           }
         },
@@ -269,7 +269,7 @@
           "_assist": {
             "_jsonName": "type",
             "_path": "members.type",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:Group:members.type",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:Group:members.type",
             "_arrayIndexKey": []
           }
         }
@@ -279,13 +279,13 @@
       "_assist": {
         "_jsonName": "members",
         "_path": "members",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:Group:members",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:Group:members",
         "_arrayIndexKey": ["value"]
       }
     }
   ],
   "meta" : {
     "resourceType" : "Schema",
-    "location" : "/v2/Schemas/urn:ietf:params:scim:schemas:core:2.0:Group"
+    "location" : "/v2/Schemas/urn:ietf:params:scim:schemas:core:2_0:Group"
   }
 }

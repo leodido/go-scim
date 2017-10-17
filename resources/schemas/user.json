@@ -1,5 +1,5 @@
 {
-  "id" : "urn:ietf:params:scim:schemas:core:2.0:User",
+  "id" : "urn:ietf:params:scim:schemas:core:2_0:User",
   "name" : "User",
   "description" : "User Account",
   "attributes" : [
@@ -774,6 +774,6 @@
   ],
   "meta" : {
     "resourceType" : "Schema",
-    "location" : "/v2/Schemas/urn:ietf:params:scim:schemas:core:2.0:User"
+    "location" : "/v2/Schemas/urn:ietf:params:scim:schemas:core:2_0:User"
   }
 }
