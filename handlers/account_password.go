@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 
 	"github.com/leodido/go-scim/shared"
@@ -19,15 +20,22 @@ func CreatePasswordResetRequestHandler(r shared.WebRequest, server ScimServer, c
 
 	username := resource.GetData()["username"].(map[string]interface{})["username"].(string)
 
-	user, err := repo.GetByUserName(username)
-	ErrorCheck(err)
+	fmt.Println("username ", username)
 
-	id := user.GetData()["id"].(map[string]interface{})["id"].(string)
-	version := user.GetData()["version"].(map[string]interface{})["version"].(string)
+	list, err := repo.Search(shared.SearchRequest{
+		Filter: fmt.Sprintf("userName eq \"%s\"", username),
+	})
 
-	user["password"] = resource.GetData()["password"]
+	// TODO: Check returned list
+	ref := list.Resources[0]
+	user := list.Resources[0].GetData()
 
-	err = repo.Update(id, version, user)
+	id := user["id"].(string)
+	version := user["version"].(string)
+
+	user["password"] = resource.GetData()["password"].(map[string]interface{})["password"].(string)
+
+	err = repo.Update(id, version, ref)
 	ErrorCheck(err)
 
 	ri.Status(http.StatusCreated)
