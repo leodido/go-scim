@@ -123,24 +123,6 @@ func (r *repository) Get(id, version string) (DataProvider, error) {
 	return r.construct(Complex(data)), nil
 }
 
-func (r *repository) GetByUserName(username string) (DataProvider, error) {
-	c, cleanUp := r.getCollection()
-	defer cleanUp()
-
-	data := make(map[string]interface{}, 0)
-	var query bson.M
-
-	query = bson.M{"username": username}
-
-	err := c.Find(query).One(&data)
-	if err != nil {
-		return nil, r.handleError(err, username)
-	}
-
-	delete(data, "_id")
-	return r.construct(Complex(data)), nil
-}
-
 func (r *repository) GetAll() ([]Complex, error) {
 	panic("not supported")
 }
