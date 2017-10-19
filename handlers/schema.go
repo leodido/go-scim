@@ -14,6 +14,7 @@ func GetAllSchemaHandler(r shared.WebRequest, server ScimServer, ctx context.Con
 		server.Schema(shared.AccountPasswordUrn),
 		server.Schema(shared.PasswordPolicyUrn),
 		server.Schema(shared.PasswordResetRequestUrn),
+		server.Schema(shared.PasswordValidateRequestUrn),
 		server.Schema(shared.EnterpriseUserUrn),
 		server.Schema(shared.GroupUrn),
 	}, nil, nil, nil)
