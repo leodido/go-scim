@@ -1,10 +1,10 @@
 {
-  "schemas": ["urn:ietf:params:scim:schemas:core:2_0:ResourceType"],
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:ResourceType"],
   "id": "Group",
   "name": "Group",
   "endpoint": "/Groups",
   "description": "Group",
-  "schema": "urn:ietf:params:scim:schemas:core:2_0:Group",
+  "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
   "meta": {
     "location": "https://example.com/v2/ResourceTypes/Group",
     "resourceType": "ResourceType"

@@ -1,5 +1,5 @@
 {
-  "schemas": ["urn:ietf:params:scim:schemas:core:2_0:User"],
+  "schemas": ["urn:ietf:params:scim:schemas:core:2.0:User"],
   "id": "51db7ce8-75d7-4c81-ad05-c98a9233811e",
   "externalId": "002",
   "userName": "jack",

@@ -15,12 +15,12 @@
       "uniqueness": "none",
       "referenceTypes": [ "uri" ],
       "canonicalValues": [
-        "urn:ietf:params:scim:schemas:core:2_0:User",
-        "urn:ietf:params:scim:schemas:extension:enterprise:2_0:User",
-        "urn:ietf:params:scim:schemas:core:2_0:Group",
-        "urn:ietf:params:scim:schemas:core:2_0:ResourceType",
-        "urn:ietf:params:scim:schemas:core:2_0:ServiceProviderConfig",
-        "urn:ietf:params:scim:schemas:core:2_0:Schema"
+        "urn:ietf:params:scim:schemas:core:2.0:User",
+        "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+        "urn:ietf:params:scim:schemas:core:2.0:Group",
+        "urn:ietf:params:scim:schemas:core:2.0:ResourceType",
+        "urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig",
+        "urn:ietf:params:scim:schemas:core:2.0:Schema"
       ],
       "subAttributes": [],
       "_assist": {
@@ -204,7 +204,7 @@
       "_assist": {
         "_jsonName": "userName",
         "_path": "userName",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:userName",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:userName",
         "_arrayIndexKey": []
       }
     },
@@ -231,7 +231,7 @@
           "_assist": {
             "_jsonName": "formatted",
             "_path": "name.formatted",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:name.formatted",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:name.formatted",
             "_arrayIndexKey": []
           }
         },
@@ -248,7 +248,7 @@
           "_assist": {
             "_jsonName": "familyName",
             "_path": "name.familyName",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:name.familyName",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:name.familyName",
             "_arrayIndexKey": []
           }
         },
@@ -265,7 +265,7 @@
           "_assist": {
             "_jsonName": "givenName",
             "_path": "name.givenName",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:name.givenName",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:name.givenName",
             "_arrayIndexKey": []
           }
         },
@@ -282,7 +282,7 @@
           "_assist": {
             "_jsonName": "middleName",
             "_path": "name.middleName",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:name.middleName",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:name.middleName",
             "_arrayIndexKey": []
           }
         },
@@ -299,7 +299,7 @@
           "_assist": {
             "_jsonName": "honorificPrefix",
             "_path": "name.honorificPrefix",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:name.honorificPrefix",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:name.honorificPrefix",
             "_arrayIndexKey": []
           }
         },
@@ -316,7 +316,7 @@
           "_assist": {
             "_jsonName": "honorificSuffix",
             "_path": "name.honorificSuffix",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:name.honorificSuffix",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:name.honorificSuffix",
             "_arrayIndexKey": []
           }
         }
@@ -324,7 +324,7 @@
       "_assist": {
         "_jsonName": "name",
         "_path": "name",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:name",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:name",
         "_arrayIndexKey": []
       }
     },
@@ -341,7 +341,7 @@
       "_assist": {
         "_jsonName": "displayName",
         "_path": "displayName",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:displayName",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:displayName",
         "_arrayIndexKey": []
       }
     },
@@ -358,7 +358,7 @@
       "_assist": {
         "_jsonName": "nickName",
         "_path": "nickName",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:nickName",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:nickName",
         "_arrayIndexKey": []
       }
     },
@@ -376,7 +376,7 @@
       "_assist": {
         "_jsonName": "profileUrl",
         "_path": "profileUrl",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:profileUrl",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:profileUrl",
         "_arrayIndexKey": []
       }
     },
@@ -393,7 +393,7 @@
       "_assist": {
         "_jsonName": "title",
         "_path": "title",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:title",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:title",
         "_arrayIndexKey": []
       }
     },
@@ -410,7 +410,7 @@
       "_assist": {
         "_jsonName": "userType",
         "_path": "userType",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:userType",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:userType",
         "_arrayIndexKey": []
       }
     },
@@ -427,7 +427,7 @@
       "_assist": {
         "_jsonName": "preferredLanguage",
         "_path": "preferredLanguage",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:preferredLanguage",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:preferredLanguage",
         "_arrayIndexKey": []
       }
     },
@@ -444,7 +444,7 @@
       "_assist": {
         "_jsonName": "locale",
         "_path": "locale",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:locale",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:locale",
         "_arrayIndexKey": []
       }
     },
@@ -461,7 +461,7 @@
       "_assist": {
         "_jsonName": "timezone",
         "_path": "timezone",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:timezone",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:timezone",
         "_arrayIndexKey": []
       }
     },
@@ -476,7 +476,7 @@
       "_assist": {
         "_jsonName": "active",
         "_path": "active",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:active",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:active",
         "_arrayIndexKey": []
       }
     },
@@ -493,7 +493,7 @@
       "_assist": {
         "_jsonName": "password",
         "_path": "password",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:password",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:password",
         "_arrayIndexKey": []
       }
     },
@@ -520,7 +520,7 @@
           "_assist": {
             "_jsonName": "value",
             "_path": "emails.value",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:emails.value",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:emails.value",
             "_arrayIndexKey": []
           }
         },
@@ -537,7 +537,7 @@
           "_assist": {
             "_jsonName": "display",
             "_path": "emails.display",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:emails.display",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:emails.display",
             "_arrayIndexKey": []
           }
         },
@@ -559,7 +559,7 @@
           "_assist": {
             "_jsonName": "type",
             "_path": "emails.type",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:emails.type",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:emails.type",
             "_arrayIndexKey": []
           }
         },
@@ -574,7 +574,7 @@
           "_assist": {
             "_jsonName": "primary",
             "_path": "emails.primary",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:emails.primary",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:emails.primary",
             "_arrayIndexKey": []
           }
         }
@@ -582,7 +582,7 @@
       "_assist": {
         "_jsonName": "emails",
         "_path": "emails",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:emails",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:emails",
         "_arrayIndexKey": ["value"]
       }
     },
@@ -608,7 +608,7 @@
           "_assist": {
             "_jsonName": "value",
             "_path": "phoneNumbers.value",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:phoneNumbers.value",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:phoneNumbers.value",
             "_arrayIndexKey": []
           }
         },
@@ -625,7 +625,7 @@
           "_assist": {
             "_jsonName": "display",
             "_path": "phoneNumbers.display",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:phoneNumbers.display",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:phoneNumbers.display",
             "_arrayIndexKey": []
           }
         },
@@ -650,7 +650,7 @@
           "_assist": {
             "_jsonName": "type",
             "_path": "phoneNumbers.type",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:phoneNumbers.type",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:phoneNumbers.type",
             "_arrayIndexKey": []
           }
         },
@@ -665,7 +665,7 @@
           "_assist": {
             "_jsonName": "primary",
             "_path": "phoneNumbers.primary",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:phoneNumbers.primary",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:phoneNumbers.primary",
             "_arrayIndexKey": []
           }
         }
@@ -673,7 +673,7 @@
       "_assist": {
         "_jsonName": "phoneNumbers",
         "_path": "phoneNumbers",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:phoneNumbers",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:phoneNumbers",
         "_arrayIndexKey": ["value"]
       }
     },
@@ -699,7 +699,7 @@
           "_assist": {
             "_jsonName": "value",
             "_path": "ims.value",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:ims.value",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:ims.value",
             "_arrayIndexKey": []
           }
         },
@@ -716,7 +716,7 @@
           "_assist": {
             "_jsonName": "display",
             "_path": "ims.display",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:ims.display",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:ims.display",
             "_arrayIndexKey": []
           }
         },
@@ -744,7 +744,7 @@
           "_assist": {
             "_jsonName": "type",
             "_path": "ims.type",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:ims.type",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:ims.type",
             "_arrayIndexKey": []
           }
         },
@@ -759,7 +759,7 @@
           "_assist": {
             "_jsonName": "primary",
             "_path": "ims.primary",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:ims.primary",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:ims.primary",
             "_arrayIndexKey": []
           }
         }
@@ -767,7 +767,7 @@
       "_assist": {
         "_jsonName": "ims",
         "_path": "ims",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:ims",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:ims",
         "_arrayIndexKey": ["value"]
       }
     },
@@ -794,7 +794,7 @@
           "_assist": {
             "_jsonName": "value",
             "_path": "photos.value",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:photos.value",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:photos.value",
             "_arrayIndexKey": []
           }
         },
@@ -811,7 +811,7 @@
           "_assist": {
             "_jsonName": "display",
             "_path": "photos.display",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:photos.display",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:photos.display",
             "_arrayIndexKey": []
           }
         },
@@ -832,7 +832,7 @@
           "_assist": {
             "_jsonName": "type",
             "_path": "photos.type",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:photos.type",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:photos.type",
             "_arrayIndexKey": []
           }
         },
@@ -847,7 +847,7 @@
           "_assist": {
             "_jsonName": "primary",
             "_path": "photos.primary",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:photos.primary",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:photos.primary",
             "_arrayIndexKey": []
           }
         }
@@ -855,7 +855,7 @@
       "_assist": {
         "_jsonName": "photos",
         "_path": "photos",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:photos",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:photos",
         "_arrayIndexKey": ["value"]
       }
     },
@@ -882,7 +882,7 @@
           "_assist": {
             "_jsonName": "formatted",
             "_path": "addresses.formatted",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:addresses.formatted",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:addresses.formatted",
             "_arrayIndexKey": []
           }
         },
@@ -899,7 +899,7 @@
           "_assist": {
             "_jsonName": "streetAddress",
             "_path": "addresses.streetAddress",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:addresses.streetAddress",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:addresses.streetAddress",
             "_arrayIndexKey": []
           }
         },
@@ -916,7 +916,7 @@
           "_assist": {
             "_jsonName": "locality",
             "_path": "addresses.locality",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:addresses.locality",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:addresses.locality",
             "_arrayIndexKey": []
           }
         },
@@ -933,7 +933,7 @@
           "_assist": {
             "_jsonName": "region",
             "_path": "addresses.region",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:addresses.region",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:addresses.region",
             "_arrayIndexKey": []
           }
         },
@@ -950,7 +950,7 @@
           "_assist": {
             "_jsonName": "postalCode",
             "_path": "addresses.postalCode",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:addresses.postalCode",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:addresses.postalCode",
             "_arrayIndexKey": []
           }
         },
@@ -967,7 +967,7 @@
           "_assist": {
             "_jsonName": "country",
             "_path": "addresses.country",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:addresses.country",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:addresses.country",
             "_arrayIndexKey": []
           }
         },
@@ -989,7 +989,7 @@
           "_assist": {
             "_jsonName": "type",
             "_path": "addresses.type",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:addresses.type",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:addresses.type",
             "_arrayIndexKey": []
           }
         },
@@ -1004,7 +1004,7 @@
           "_assist": {
             "_jsonName": "primary",
             "_path": "addresses.primary",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:addresses.primary",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:addresses.primary",
             "_arrayIndexKey": []
           }
         }
@@ -1012,7 +1012,7 @@
       "_assist": {
         "_jsonName": "addresses",
         "_path": "addresses",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:addresses",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:addresses",
         "_arrayIndexKey": ["streetAddress", "locality", "region", "postalCode", "country", "type"]
       }
     },
@@ -1038,7 +1038,7 @@
           "_assist": {
             "_jsonName": "value",
             "_path": "groups.value",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:groups.value",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:groups.value",
             "_arrayIndexKey": []
           }
         },
@@ -1059,7 +1059,7 @@
           "_assist": {
             "_jsonName": "$ref",
             "_path": "groups.$ref",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:groups.$ref",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:groups.$ref",
             "_arrayIndexKey": []
           }
         },
@@ -1076,7 +1076,7 @@
           "_assist": {
             "_jsonName": "display",
             "_path": "groups.display",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:groups.display",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:groups.display",
             "_arrayIndexKey": []
           }
         },
@@ -1097,7 +1097,7 @@
           "_assist": {
             "_jsonName": "type",
             "_path": "groups.type",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:groups.type",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:groups.type",
             "_arrayIndexKey": []
           }
         }
@@ -1105,7 +1105,7 @@
       "_assist": {
         "_jsonName": "groups",
         "_path": "groups",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:groups",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:groups",
         "_arrayIndexKey": ["value"]
       }
     },
@@ -1131,7 +1131,7 @@
           "_assist": {
             "_jsonName": "value",
             "_path": "entitlements.value",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:entitlements.value",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:entitlements.value",
             "_arrayIndexKey": []
           }
         },
@@ -1148,7 +1148,7 @@
           "_assist": {
             "_jsonName": "display",
             "_path": "entitlements.display",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:entitlements.display",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:entitlements.display",
             "_arrayIndexKey": []
           }
         },
@@ -1165,7 +1165,7 @@
           "_assist": {
             "_jsonName": "type",
             "_path": "entitlements.type",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:entitlements.type",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:entitlements.type",
             "_arrayIndexKey": []
           }
         },
@@ -1180,7 +1180,7 @@
           "_assist": {
             "_jsonName": "primary",
             "_path": "entitlements.primary",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:entitlements.primary",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:entitlements.primary",
             "_arrayIndexKey": []
           }
         }
@@ -1188,7 +1188,7 @@
       "_assist": {
         "_jsonName": "entitlements",
         "_path": "entitlements",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:entitlements",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:entitlements",
         "_arrayIndexKey": ["value"]
       }
     },
@@ -1214,7 +1214,7 @@
           "_assist": {
             "_jsonName": "value",
             "_path": "roles.value",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:roles.value",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:roles.value",
             "_arrayIndexKey": []
           }
         },
@@ -1231,7 +1231,7 @@
           "_assist": {
             "_jsonName": "display",
             "_path": "roles.display",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:roles.display",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:roles.display",
             "_arrayIndexKey": []
           }
         },
@@ -1249,7 +1249,7 @@
           "_assist": {
             "_jsonName": "type",
             "_path": "roles.type",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:roles.type",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:roles.type",
             "_arrayIndexKey": []
           }
         },
@@ -1264,7 +1264,7 @@
           "_assist": {
             "_jsonName": "primary",
             "_path": "roles.primary",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:roles.primary",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:roles.primary",
             "_arrayIndexKey": []
           }
         }
@@ -1272,7 +1272,7 @@
       "_assist": {
         "_jsonName": "roles",
         "_path": "roles",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:roles",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:roles",
         "_arrayIndexKey": ["value"]
       }
     },
@@ -1299,7 +1299,7 @@
           "_assist": {
             "_jsonName": "value",
             "_path": "x509Certificates.value",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:x509Certificates.value",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:x509Certificates.value",
             "_arrayIndexKey": []
           }
         },
@@ -1316,7 +1316,7 @@
           "_assist": {
             "_jsonName": "display",
             "_path": "x509Certificates.display",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:x509Certificates.display",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:x509Certificates.display",
             "_arrayIndexKey": []
           }
         },
@@ -1334,7 +1334,7 @@
           "_assist": {
             "_jsonName": "type",
             "_path": "x509Certificates.type",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:x509Certificates.type",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:x509Certificates.type",
             "_arrayIndexKey": []
           }
         },
@@ -1349,7 +1349,7 @@
           "_assist": {
             "_jsonName": "primary",
             "_path": "x509Certificates.primary",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:x509Certificates.primary",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:x509Certificates.primary",
             "_arrayIndexKey": []
           }
         }
@@ -1357,7 +1357,7 @@
       "_assist": {
         "_jsonName": "x509Certificates",
         "_path": "x509Certificates",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:User:x509Certificates",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:x509Certificates",
         "_arrayIndexKey": ["value"]
       }
     },
@@ -1374,7 +1374,7 @@
       "_assist": {
         "_jsonName": "displayName",
         "_path": "displayName",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:Group:displayName",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:Group:displayName",
         "_arrayIndexKey": []
       }
     },
@@ -1398,7 +1398,7 @@
           "_assist": {
             "_jsonName": "value",
             "_path": "members.value",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:Group:members.value",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:Group:members.value",
             "_arrayIndexKey": []
           }
         },
@@ -1419,7 +1419,7 @@
           "_assist": {
             "_jsonName": "$ref",
             "_path": "members.$ref",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:Group:members.$ref",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:Group:members.$ref",
             "_arrayIndexKey": []
           }
         },
@@ -1440,7 +1440,7 @@
           "_assist": {
             "_jsonName": "type",
             "_path": "members.type",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2_0:Group:members.type",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:Group:members.type",
             "_arrayIndexKey": []
           }
         }
@@ -1450,13 +1450,13 @@
       "_assist": {
         "_jsonName": "members",
         "_path": "members",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2_0:Group:members",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:Group:members",
         "_arrayIndexKey": ["value"]
       }
     }
   ],
   "meta" : {
     "resourceType" : "Schema",
-    "location" : "/Schemas/urn:ietf:params:scim:schemas:core:2_0:User"
+    "location" : "/Schemas/urn:ietf:params:scim:schemas:core:2.0:User"
   }
 }

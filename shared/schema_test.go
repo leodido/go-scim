@@ -47,28 +47,28 @@ func TestSchema_GetAttribute(t *testing.T) {
 			"Name.familyName",
 			func(attr *Attribute) {
 				require.NotNil(t, attr)
-				assert.Equal(t, "urn:ietf:params:scim:schemas:core:2_0:User:name.familyName", attr.Assist.FullPath)
+				assert.Equal(t, "urn:ietf:params:scim:schemas:core:2.0:User:name.familyName", attr.Assist.FullPath)
 			},
 		},
 		{
-			"urn:ietf:params:scim:schemas:core:2_0:User:emails",
+			"urn:ietf:params:scim:schemas:core:2.0:User:emails",
 			func(attr *Attribute) {
 				require.NotNil(t, attr)
-				assert.Equal(t, "urn:ietf:params:scim:schemas:core:2_0:User:emails", attr.Assist.FullPath)
+				assert.Equal(t, "urn:ietf:params:scim:schemas:core:2.0:User:emails", attr.Assist.FullPath)
 			},
 		},
 		{
-			"urn:ietf:params:scim:schemas:core:2_0:User:groups.value",
+			"urn:ietf:params:scim:schemas:core:2.0:User:groups.value",
 			func(attr *Attribute) {
 				require.NotNil(t, attr)
-				assert.Equal(t, "urn:ietf:params:scim:schemas:core:2_0:User:groups.value", attr.Assist.FullPath)
+				assert.Equal(t, "urn:ietf:params:scim:schemas:core:2.0:User:groups.value", attr.Assist.FullPath)
 			},
 		},
 		{
 			"groups[type eq \"direct\"].value",
 			func(attr *Attribute) {
 				require.NotNil(t, attr)
-				assert.Equal(t, "urn:ietf:params:scim:schemas:core:2_0:User:groups.value", attr.Assist.FullPath)
+				assert.Equal(t, "urn:ietf:params:scim:schemas:core:2.0:User:groups.value", attr.Assist.FullPath)
 			},
 		},
 	} {

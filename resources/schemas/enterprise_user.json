@@ -1,5 +1,5 @@
 {
-  "id": "urn:ietf:params:scim:schemas:extension:enterprise:2_0:User",
+  "id": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
   "name": "EnterpriseUser",
   "description": "Enterprise User",
   "attributes": [
@@ -108,6 +108,6 @@
   ],
   "meta": {
     "resourceType": "Schema",
-    "location": "/v2/Schemas/urn:ietf:params:scim:schemas:extension:enterprise:2_0:User"
+    "location": "/v2/Schemas/urn:ietf:params:scim:schemas:extension:enterprise:2.0:User"
   }
 }

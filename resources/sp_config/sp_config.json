@@ -1,6 +1,6 @@
 {
   "schemas": [
-    "urn:ietf:params:scim:schemas:core:2_0:ServiceProviderConfig"
+    "urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig"
   ],
   "documentationUri": "http://example.com/help/scim.html",
   "patch": {

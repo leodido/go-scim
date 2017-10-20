@@ -96,7 +96,7 @@ func (ro *accountPasswordAssignment) AssignValue(r *Resource, ctx context.Contex
 	accountPassword := map[string]interface{}{
 		"passwordMustChange": true,
 	}
-	r.Complex["urn:ietf:params:scim:schemas:extension:account:2_0:Password"] = accountPassword
+	r.Complex["urn:ietf:params:scim:schemas:extension:account:2.0:Password"] = accountPassword
 
 	return nil
 }
