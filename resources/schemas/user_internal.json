@@ -18,7 +18,7 @@
       ],
       "canonicalValues": [
         "urn:ietf:params:scim:schemas:core:2.0:User",
-        "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User",
+        "enterpriseUser",
         "urn:ietf:params:scim:schemas:extension:account:2.0:Password",
         "urn:ietf:params:scim:schemas:core:2.0:Group",
         "urn:ietf:params:scim:schemas:core:2.0:ResourceType",
@@ -1394,7 +1394,7 @@
       }
     },
     {
-      "name": "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User",
+      "name": "enterpriseUser",
       "description": "Enterprise user extension",
       "type": "complex",
       "multiValued": false,
@@ -1418,8 +1418,8 @@
           "uniqueness": "none",
           "_assist": {
             "_jsonName": "employeeNumber",
-            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User.employeeNumber",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0.User:employeeNumber",
+            "_path": "enterpriseUser.employeeNumber",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:enterpriseUser.employeeNumber",
             "_arrayIndexKey": []
           }
         },
@@ -1435,8 +1435,8 @@
           "uniqueness": "none",
           "_assist": {
             "_jsonName": "costCenter",
-            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User.costCenter",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0.User:costCenter",
+            "_path": "enterpriseUser.costCenter",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:enterpriseUser.costCenter",
             "_arrayIndexKey": []
           }
         },
@@ -1452,8 +1452,8 @@
           "uniqueness": "none",
           "_assist": {
             "_jsonName": "organization",
-            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User.organization",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0.User:organization",
+            "_path": "enterpriseUser.organization",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:enterpriseUser.organization",
             "_arrayIndexKey": []
           }
         },
@@ -1469,8 +1469,8 @@
           "uniqueness": "none",
           "_assist": {
             "_jsonName": "division",
-            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User.division",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0.User:division",
+            "_path": "enterpriseUser.division",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:enterpriseUser.division",
             "_arrayIndexKey": []
           }
         },
@@ -1486,8 +1486,8 @@
           "uniqueness": "none",
           "_assist": {
             "_jsonName": "department",
-            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User.department",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0.User:department",
+            "_path": "enterpriseUser.department",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:enterpriseUser.department",
             "_arrayIndexKey": []
           }
         },
@@ -1510,8 +1510,8 @@
               "uniqueness": "none",
               "_assist": {
                 "_jsonName": "value",
-                "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User.manager.value",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0.User:manager.value",
+                "_path": "enterpriseUser.manager.value",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:enterpriseUser.manager.value",
                 "_arrayIndexKey": []
               }
             },
@@ -1530,8 +1530,8 @@
               "uniqueness": "none",
               "_assist": {
                 "_jsonName": "$ref",
-                "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User.manager.$ref",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0.User:manager.$ref",
+                "_path": "enterpriseUser.manager.$ref",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:enterpriseUser.manager.$ref",
                 "_arrayIndexKey": []
               }
             },
@@ -1547,8 +1547,8 @@
               "uniqueness": "none",
               "_assist": {
                 "_jsonName": "displayName",
-                "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User.manager.displayName",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0.User:manager.displayName",
+                "_path": "enterpriseUser.manager.displayName",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:enterpriseUser.manager.displayName",
                 "_arrayIndexKey": []
               }
             }
@@ -1557,16 +1557,16 @@
           "returned": "default",
           "_assist": {
             "_jsonName": "manager",
-            "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User.manager",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0.User:manager",
+            "_path": "enterpriseUser.manager",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:enterpriseUser.manager",
             "_arrayIndexKey": []
           }
         }
       ],
       "_assist": {
-        "_jsonName": "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User",
-        "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0.User",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0.User",
+        "_jsonName": "enterpriseUser",
+        "_path": "enterpriseUser",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:enterpriseUser",
         "_arrayIndexKey": []
       }
     },
