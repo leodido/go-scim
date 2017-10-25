@@ -31,6 +31,9 @@ func CreateUserHandler(r shared.WebRequest, server ScimServer, ctx context.Conte
 	err = server.AssignReadOnlyValue(resource, ctx)
 	ErrorCheck(err)
 
+	err = server.Mapping(resource, sch, ctx)
+	ErrorCheck(err)
+
 	err = repo.Create(resource)
 	ErrorCheck(err)
 
