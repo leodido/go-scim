@@ -4,12 +4,13 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	. "github.com/leodido/go-scim/shared"
-	"github.com/satori/go.uuid"
 	"net/http"
 	"strconv"
 	"strings"
 	"time"
+
+	. "github.com/leodido/go-scim/shared"
+	"github.com/satori/go.uuid"
 )
 
 // interface for server, provides all necessary components for processing
@@ -37,6 +38,8 @@ type ScimServer interface {
 
 	// read only generation
 	AssignReadOnlyValue(r *Resource, ctx context.Context) error
+
+	Mapping(subj *Resource, sch *Schema, ctx context.Context) error
 
 	// json
 	MarshalJSON(v interface{}, sch *Schema, attributes []string, excludedAttributes []string) ([]byte, error)

@@ -3,8 +3,9 @@ package handlers
 import (
 	"context"
 	"fmt"
-	"github.com/leodido/go-scim/shared"
 	"net/http"
+
+	"github.com/leodido/go-scim/shared"
 )
 
 func CreateUserHandler(r shared.WebRequest, server ScimServer, ctx context.Context) (ri *ResponseInfo) {
@@ -91,6 +92,9 @@ func PatchUserHandler(r shared.WebRequest, server ScimServer, ctx context.Contex
 	ErrorCheck(err)
 
 	err = server.AssignReadOnlyValue(resource.(*shared.Resource), ctx)
+	ErrorCheck(err)
+
+	err = server.Mapping(resource.(*shared.Resource), sch, ctx)
 	ErrorCheck(err)
 
 	err = repo.Update(id, version, resource)

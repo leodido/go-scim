@@ -303,6 +303,9 @@ func (ss *simpleServer) ValidateMutability(subj *scim.Resource, ref *scim.Resour
 func (ss *simpleServer) ValidateUniqueness(subj *scim.Resource, sch *scim.Schema, repo scim.Repository, ctx context.Context) error {
 	return scim.ValidateUniqueness(subj, sch, repo, ctx)
 }
+func (ss *simpleServer) Mapping(subj *scim.Resource, sch *scim.Schema, ctx context.Context) error {
+	fmt.Println("Resource ", subj)
+}
 func (ss *simpleServer) AssignReadOnlyValue(r *scim.Resource, ctx context.Context) (err error) {
 	requestType := ctx.Value(scim.RequestType{}).(int)
 	switch requestType {
