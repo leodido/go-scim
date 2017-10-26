@@ -1564,21 +1564,21 @@
         }
       ],
       "_assist": {
-        "_jsonName": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
+        "_jsonName": "enterpriseUser",
         "_path": "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
         "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
         "_arrayIndexKey": []
       }
     },
     {
-      "name": "accountPassword",
+      "name": "urn:ietf:params:scim:schemas:extension:account:2.0:Password",
       "description": "Account password extension",
       "type": "complex",
       "multiValued": false,
       "required": false,
       "caseExact": false,
       "mutability": "readWrite",
-      "returned": "urn:ietf:params:scim:schemas:extension:account:2.0:Password",
+      "returned": "default",
       "uniqueness": "none",
       "referenceTypes": [],
       "canonicalValues": [],
@@ -1602,8 +1602,8 @@
               "returned": "default",
               "_assist": {
                 "_jsonName": "createDate",
-                "_path": "accountPassword.createDate",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword.createDate",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.createDate",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.createDate",
                 "_arrayIndexKey": []
               }
             },
@@ -1617,8 +1617,8 @@
               "returned": "default",
               "_assist": {
                 "_jsonName": "cantChange",
-                "_path": "accountPassword.cantChange",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword.cantChange",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.cantChange",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.cantChange",
                 "_arrayIndexKey": []
               }
             },
@@ -1632,8 +1632,8 @@
               "returned": "default",
               "_assist": {
                 "_jsonName": "noExpiry",
-                "_path": "accountPassword.noExpiry",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword.noExpiry",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.noExpiry",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.noExpiry",
                 "_arrayIndexKey": []
               }
             },
@@ -1647,8 +1647,8 @@
               "returned": "default",
               "_assist": {
                 "_jsonName": "lastSuccessfulLoginDate",
-                "_path": "accountPassword.lastSuccessfulLoginDate",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword.lastSuccessfulLoginDate",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.lastSuccessfulLoginDate",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.lastSuccessfulLoginDate",
                 "_arrayIndexKey": []
               }
             },
@@ -1662,8 +1662,8 @@
               "returned": "default",
               "_assist": {
                 "_jsonName": "lastFailedLoginDate",
-                "_path": "accountPassword.lastFailedLoginDate",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword.lastFailedLoginDate",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.lastFailedLoginDate",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.lastFailedLoginDate",
                 "_arrayIndexKey": []
               }
             },
@@ -1677,8 +1677,8 @@
               "returned": "default",
               "_assist": {
                 "_jsonName": "loginAttempts",
-                "_path": "accountPassword.loginAttempts",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword.loginAttempts",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.loginAttempts",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.loginAttempts",
                 "_arrayIndexKey": []
               }
             },
@@ -1692,8 +1692,8 @@
               "returned": "default",
               "_assist": {
                 "_jsonName": "resetAttempts",
-                "_path": "accountPassword.resetAttempts",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword.resetAttempts",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.resetAttempts",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.resetAttempts",
                 "_arrayIndexKey": []
               }
             },
@@ -1707,16 +1707,16 @@
               "returned": "default",
               "_assist": {
                 "_jsonName": "passwordMustChange",
-                "_path": "accountPassword.passwordMustChange",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword.passwordMustChange",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.passwordMustChange",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.passwordMustChange",
                 "_arrayIndexKey": []
               }
             }
           ],
           "_assist": {
             "_jsonName": "passwordState",
-            "_path": "accountPassword:passwordState",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword:passwordState",
+            "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.passwordState",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.passwordState",
             "_arrayIndexKey": []
           }
         },
@@ -1735,8 +1735,8 @@
           "uniqueness": "none",
           "_assist": {
             "_jsonName": "passwordPolicyUrl",
-            "_path": "accountPassword:passwordPolicyUrl",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword:passwordPolicyUrl",
+            "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.passwordPolicyUrl",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.passwordPolicyUrl",
             "_arrayIndexKey": []
           }
         },
@@ -1759,8 +1759,8 @@
               "returned": "default",
               "_assist": {
                 "_jsonName": "locked",
-                "_path": "accountPassword:locked.reason",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword:locked.reason",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.locked.reason",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.locked.reason",
                 "_arrayIndexKey": []
               }
             },
@@ -1774,8 +1774,8 @@
               "returned": "default",
               "_assist": {
                 "_jsonName": "locked",
-                "_path": "accountPassword:locked.on",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword:locked.on",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.locked.on",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.locked.on",
                 "_arrayIndexKey": []
               }
             },
@@ -1789,16 +1789,16 @@
               "returned": "default",
               "_assist": {
                 "_jsonName": "locked",
-                "_path": "accountPassword:locked.lockDate",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword:locked.lockDate",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.locked.lockDate",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.locked.lockDate",
                 "_arrayIndexKey": []
               }
             }
           ],
           "_assist": {
             "_jsonName": "locked",
-            "_path": "accountPassword:locked",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword:locked",
+            "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.locked",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.locked",
             "_arrayIndexKey": []
           }
         },
@@ -1823,8 +1823,8 @@
               "uniqueness": "none",
               "_assist": {
                 "_jsonName": "challenges",
-                "_path": "accountPassword:challenges.question",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword:challenges.question",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.challenges.question",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.challenges.question",
                 "_arrayIndexKey": []
               }
             },
@@ -1840,16 +1840,16 @@
               "uniqueness": "none",
               "_assist": {
                 "_jsonName": "challenges",
-                "_path": "accountPassword:challenges.response",
-                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword:challenges.response",
+                "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.challenges.response",
+                "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.challenges.response",
                 "_arrayIndexKey": []
               }
             }
           ],
           "_assist": {
             "_jsonName": "challenges",
-            "_path": "accountPassword:challenges",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword:challenges",
+            "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.challenges",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.challenges",
             "_arrayIndexKey": []
           }
         },
@@ -1865,16 +1865,16 @@
           "uniqueness": "none",
           "_assist": {
             "_jsonName": "passwordHistory",
-            "_path": "accountPassword:passwordHistory",
-            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword:passwordHistory",
+            "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password.passwordHistory",
+            "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password.passwordHistory",
             "_arrayIndexKey": []
           }
         }
       ],
       "_assist": {
         "_jsonName": "accountPassword",
-        "_path": "accountPassword",
-        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:accountPassword",
+        "_path": "urn:ietf:params:scim:schemas:extension:account:2.0:Password",
+        "_full_path": "urn:ietf:params:scim:schemas:core:2.0:User:urn:ietf:params:scim:schemas:extension:account:2.0:Password",
         "_arrayIndexKey": []
       }
     }
