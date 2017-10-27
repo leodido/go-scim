@@ -316,8 +316,6 @@ func (ss *simpleServer) AssignReadOnlyValue(r *scim.Resource, ctx context.Contex
 		web.ErrorCheck(err)
 		err = ss.groupAssignment.AssignValue(r, ctx)
 		web.ErrorCheck(err)
-		err = ss.accountPasswordAssignment.AssignValue(r, ctx)
-		web.ErrorCheck(err)
 	case scim.ReplaceUser, scim.PatchUser:
 		err = ss.userMetaAssignment.AssignValue(r, ctx)
 		web.ErrorCheck(err)

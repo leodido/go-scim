@@ -42,7 +42,7 @@ const (
 	Parenthesis
 )
 
-var reg, regerr = regexp.Compile("^(?i)([a-z]+:)+2")
+var reg, _ = regexp.Compile("^(?i)([a-z]+:)+2$")
 
 // create a new Path from text
 func NewPath(text string) (Path, error) {
@@ -63,7 +63,7 @@ func NewPath(text string) (Path, error) {
 		case quoteRune:
 			textMode = !textMode
 		case periodRune:
-			if !textMode && !reg.MatchString(text) {
+			if !textMode && !reg.MatchString(text[:i]) {
 				idx = i
 				break
 			}
